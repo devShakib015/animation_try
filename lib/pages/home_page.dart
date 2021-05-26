@@ -1,4 +1,7 @@
+import 'package:animation_try/pages/container_animation_page.dart';
+import 'package:animation_try/pages/open_container.dart';
 import 'package:animation_try/pages/sun_animation_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -6,8 +9,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Map<String, Widget>> _pages = [
       {
-        "Sun Animation Page": SunAnimationPage(
-          title: "Sun Animation Page",
+        "Container Animation Page": ContainerAnimationPage(
+          title: "Container Animation Page",
         ),
       },
       {
@@ -16,9 +19,7 @@ class HomePage extends StatelessWidget {
         ),
       },
       {
-        "Sun Animation Page": SunAnimationPage(
-          title: "Sun Animation Page",
-        ),
+        "Open Container": OpenContainerAnimation(title: "Open Container"),
       },
       {
         "Sun Animation Page": SunAnimationPage(
@@ -43,7 +44,7 @@ class HomePage extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
+                          CupertinoPageRoute(
                             builder: (context) => page.values.toList()[0],
                           ),
                         );
